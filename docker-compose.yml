@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    build: .
+    ports: # - specifies an array in yml
+      - "4001:8081" #4001 on local machine to 8081 inside container
+    # both these containers will be on the same network, so they can communicate
